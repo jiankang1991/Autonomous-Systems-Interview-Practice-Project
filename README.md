@@ -64,6 +64,7 @@ I have not deployed one. In my opinion, first thing is that the inference model 
 
 These two questions I can answer together. I read deep learning research paper of ResNet recently. Here is the key point of this architecture. 
 
+From [here](https://github.com/pytorch/vision/blob/master/torchvision/models/resnet.py):
 ```
 class BasicBlock(nn.Module):
 
@@ -151,6 +152,8 @@ The strength of ResNet is that it tries to learn an identical mapping from the i
 
 The key insight of Inception neural network is that the optimal solution of kernel size is determined by the network. It tackles the problem that the sizes of objects in different images are usually various, so that the optimal kernel size cannot be easily fixed. Also, stacking large convolutional operations is also computationally expensive. By concatenating several outputs from different convolutional operations with various kernel sizes, the network can adaptively choose the proper kernel size during training. 
 
+From [here](https://github.com/pytorch/vision/blob/master/torchvision/models/inception.py):
+
 ``` 
 class InceptionA(nn.Module):
 
@@ -195,6 +198,9 @@ class InceptionA(nn.Module):
 
 
 There are two kinds of MobileNet, V1 and V2. Both of these two versions of MobileNet make use of Depthwise Separable Convolution. It is a depthwise convolution followed by a pointwise convolution, which can heavily reduce the number of parameters for training. For example, with `N` input channels, `M` output channels, spatial size of feature maps is `D`, and convolutional kernel size `K`, the depthwise separable convolution operation cost is `N*D*D*K*K + M*N*D*D` and the cost of standard convolution operation `D*D*M*N*K*K`. Besides utilizing Depthwise Separable Convolution, MobileNetV2 also proposes a block called inverted residual. Different from residual block utilized in ResNet, which is wide->narrow->wide, inverted residual block adopts narrow->wide->narrow strategy. 
+
+From [here](https://github.com/tonylins/pytorch-mobilenet-v2):
+
 
 ```
 
