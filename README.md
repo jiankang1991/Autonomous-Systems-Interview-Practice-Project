@@ -215,8 +215,6 @@ class depthwise_separable_conv(nn.Module):
         out = self.pointwise(out)
         return out
 
-
-```
 class InvertedResidual(nn.Module):
     def __init__(self, inp, oup, stride, expand_ratio):
         super(InvertedResidual, self).__init__()
@@ -259,7 +257,6 @@ class InvertedResidual(nn.Module):
 
 ```
 
-```
 
 ### Describe behavioral cloning. How would you go about gathering quality data for this?
 
