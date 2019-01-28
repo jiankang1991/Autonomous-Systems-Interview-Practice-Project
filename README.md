@@ -253,9 +253,7 @@ class InvertedResidual(nn.Module):
 
 ```
 
-
-
-
+```
 
 ### Describe behavioral cloning. How would you go about gathering quality data for this?
 
